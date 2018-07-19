@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <title>로그인</title>
     <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" src="Common.js"></script>
 </head>
 <body>
-<div class="overlay">
-    <div class="login_table">
-    <form style="margin:30px;">
-        <table>
-            <tr>
-                <td>ID : </td>
-                <td><input type="text" id="id"></td>
-            </tr>
-            <tr>
-                <td>PW : </td>
-                <td><input type="password" id = "pw"></td>
-            </tr>
-        </table>
-        <table width="100%">
-            <tr>
-                <td><input class="btn" type="submit" value="로그인"></td>
-                <td><button class="btn">회원가입</button></td>
-            </tr>
-        </table>
-
-    </form>
-  </div>
-</div>
+    <div class="overlay">
+        <div class="login_table">
+        <form style="margin:30px;">
+            <table>
+                <tr>
+                    <td>ID : </td>
+                    <td><input type="text" id="id"></td>
+                </tr>
+                <tr>
+                    <td>PW : </td>
+                    <td><input type="password" id = "pw"></td>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td><input onclick="return  loginClick();" class="btn" type="submit" value="로그인"></td>
+                    <td><button class="btn">회원가입</button></td>
+                </tr>
+            </table>
+        </form>
+      </div>
+    </div>
 </body>
 </html>
