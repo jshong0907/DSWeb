@@ -8,26 +8,27 @@
 </head>
 <body>
     <div class="overlay">
+        <img style="width: 300px; height:120px; margin: 0 auto;  display: flex; justify-content: center;" src="나반.png">
         <div class="login_table">
-        <form style="margin:30px;">
-            <table>
-                <tr>
-                    <td>ID : </td>
-                    <td><input type="text" id="id"></td>
-                </tr>
-                <tr>
-                    <td>PW : </td>
-                    <td><input type="password" id = "pw"></td>
-                </tr>
-            </table>
-            <table width="100%">
-                <tr>
-                    <td><input onclick="return  loginClick();" class="btn" type="submit" value="로그인"></td>
-                    <td><button class="btn">회원가입</button></td>
-                </tr>
-            </table>
-        </form>
-      </div>
+            <form style="margin:30px;">
+                <table>
+                    <tr>
+                        <td>ID : </td>
+                        <td><input type="text" id="id"></td>
+                    </tr>
+                    <tr>
+                        <td>PW : </td>
+                        <td><input type="password" id = "pw"></td>
+                    </tr>
+                </table>
+                <table width="100%">
+                    <tr>
+                        <td><input onclick="return loginClick();" class="btn" type="submit" value="로그인"></td>
+                        <td><button type="button" onclick="location.href='Register.html'" class="btn">회원가입</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
 </body>
 </html>

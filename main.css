@@ -1,15 +1,19 @@
 .overlay
 {
+    font-family: Arial;
     position: fixed;
     width: 100%;
     height: 100%;
+    background-color: lightyellow;
 }
 
 .login_table
 {
+    border-radius: 7px;
+    background-color: lightcyan;
     border-style: ridge;
     position: relative;
-    top: 5%;
+    <!--top: 5%;-->
     height: 150px;
     width: 400px;
     margin: 0 auto;
@@ -19,6 +23,8 @@
 
 .btn
 {
+    background-color: whitesmoke;
+    border-radius: 6px;
     height: 30px;
     width: 100%;
 }
