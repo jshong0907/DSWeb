@@ -28,3 +28,19 @@
     height: 30px;
     width: 100%;
 }
+
+.register_interface
+{
+    border-radius: 7px;
+    background-color: lightcyan;
+    border-style: ridge;
+    position: relative;
+    height: 800px;
+    width: 600px;
+    top: 50%;
+    left: 50%;
+    margin-top: -400px;
+    margin-left: -300px;
+    display: flex;
+    justify-content: center;
+}

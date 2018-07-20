@@ -4,9 +4,97 @@
     <meta charset="UTF-8">
     <title>회원가입</title>
     <link rel="stylesheet" href="Main.css">
+    <script>
+        function isDuplicated()
+        {
+            var ID = document.getElementById("new_id").value;
+            if (ID == "jshong0907")
+            {
+                alert("아이디중복!!!");
+                document.getElementById("new_id").value = "";
+            }
+            else { alert("사용가능!!!") }
+
+        }
+        function isCorrect()
+        {
+            var PW = document.getElementById("new_pw").value;
+            var is_PW = document.getElementById("is_pw").value;
+            if (PW != is_PW)
+            {
+                alert("비밀번호가 다릅니다!!!");
+                document.getElementById("new_pw").value = "";
+                document.getElementById("is_pw").value = "";
+            }
+        }
+        function registered()
+        {
+            var ID = document.getElementById("new_id").value;
+            var PW = document.getElementById("new_pw").value;
+            var Phone_Num = document.getElementById("phone1").value + document.getElementById("phone2").value + document.getElementById("phone3").value;
+            var Email = document.getElementById("new_email").value;
+            if (ID != "" && PW != "" && Phone_Num != "" && Email != "")
+            {
+                alert("회원가입성공!!!");
+            }
+            else { alert("필요충분조건 성립 X") }
+        }
+    </script>
 </head>
 <body>
     <div class="overlay">
+        <div class="register_interface">
+            <form>
+                <table>
+                    <tr>
+                        <td>
+                            <div style="width: 100%; height: 120px;">
+                                <img style="width: 300px; height:120px; margin: 0 auto; display: flex;" src="나반2.png">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td>ID : </td>
+                                        <td><input id="new_id" type="text"></td>
+                                        <td><button onclick="isDuplicated();">중복확인</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>PW : </td>
+                                        <td><input id="new_pw" type="password"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>PW확인 : </td>
+                                        <td><input onblur="isCorrect();" id="is_pw" type="password"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>이메일 : </td>
+                                        <td><input id="new_email" type="email"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>핸드폰 : </td>
+                                        <td>
+                                            <div>
+                                                <input id = "phone1" type="text" size="3" maxlength="3" pattern="[0-9]{3}[0-9]?"> -
+                                                <input id = "phone2" type="text" size="4" maxlength="4" pattern="[0-9]{4}[0-9]?"> -
+                                                <input id = "phone3" type="text" size="4" maxlength="4" pattern="[0-9]{3}[0-9]?">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><button onclick="registered();" class="btn">회원가입</button></td>
+                    <td><button onclick="location.href='index.html'" class="btn">취소</button></td>
+                </tr>
+            </table>
+
+        </div>
 
     </div>
 </body>
