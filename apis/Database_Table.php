@@ -18,7 +18,7 @@ if ($result=mysqli_query($db,$sql))
     $phone = $row[3];
     $allowed = $row[4];
     //echo "<script>var n = i.toString();</script>";
-    echo "<script>inner_html += '<tr><td name=\'id\'>$id</td><td>$pw</td><td>$email</td><td>$phone</td><td>$allowed</td><td><form method=\'POST\' action=\"./apis/allow_register.php\"><button name=\'btn\' value=$id>승인</button></form><form method=\'POST\' action=\"./apis/refuse_register.php\"><button name=\'btn\' value=$id>취소</button></form></td><td><form method=\'POST\' action=\"./apis/delete_register.php\"><button name=\'btn\' value=$id>삭제</button></form></td></tr>'; </script>";
+    echo "<script>inner_html += '<tr><td name=\'id\'>$id</td><td>$pw</td><td>$email</td><td>$phone</td><td>$allowed</td><td><form method=\'POST\' action=\"./apis/allow_register.php\"><button name=\'btn\' value=$id>승인</button></form></td><td><form method=\'POST\' action=\"./apis/refuse_register.php\"><button name=\'btn\' value=$id>취소</button></form></td><td><form method=\'POST\' action=\"./apis/delete_register.php\"><button name=\'btn\' value=$id>삭제</button></form></td></tr>'; </script>";
     //echo "<script>document.getElementById('table').innerHTML='<tr><td>$id</td><td>$pw</td><td>$email</td><td>$phone</td></tr>';</script>";
     //echo "<script>i += 1;</script>";
   }

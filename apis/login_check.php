@@ -23,9 +23,25 @@ if($result = mysqli_query($db, $sql))
         $row = mysqli_fetch_assoc($result);
         if($row["PW"] == $pass_encode) // 로그인 성공
         {
+            $sql = "SELECT `allowed` FROM `user` WHERE ID='$email'";
             // 리디렉션
             echo "<script>alert('Login Succeed.');</script>";
-            echo "<script>location.href='../Mainpage.html';</script>";
+            if($result = mysqli_query($db, $sql))
+            {
+              $row = mysqli_fetch_assoc($result);
+              if($row['allowed'] == true)
+              {
+                echo "<script>location.href='../Mainpage.html';</script>";
+              }
+              else
+              {
+                echo "<script>location.href='https://www.naver.com';</script>";
+              }
+            }
+            else
+            {
+              echo "good";
+            }
         }
         else
         {
