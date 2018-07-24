@@ -5,17 +5,6 @@
     <title>회원가입</title>
     <link rel="stylesheet" href="Main.css">
     <script>
-        function isDuplicated()
-        {
-            var ID = document.getElementById("new_id").value;
-            if (ID == "jshong0907")
-            {
-                alert("아이디중복!!!");
-                document.getElementById("new_id").value = "";
-            }
-            else { alert("사용가능!!!") }
-
-        }
         function isCorrect()
         {
             var PW = document.getElementById("new_pw").value;
@@ -25,26 +14,15 @@
                 alert("비밀번호가 다릅니다!!!");
                 document.getElementById("new_pw").value = "";
                 document.getElementById("is_pw").value = "";
+                return false;
             }
-        }
-        function registered()
-        {
-            var ID = document.getElementById("new_id").value;
-            var PW = document.getElementById("new_pw").value;
-            var Phone_Num = document.getElementById("phone1").value + document.getElementById("phone2").value + document.getElementById("phone3").value;
-            var Email = document.getElementById("new_email").value;
-            if (ID != "" && PW != "" && Phone_Num != "" && Email != "")
-            {
-                alert("회원가입성공!!!");
-            }
-            else { alert("필요충분조건 성립 X") }
         }
     </script>
 </head>
 <body>
     <div class="overlay">
         <div class="register_interface">
-            <form>
+            <form method='POST' action="./apis/add_user.php">
                 <table>
                     <tr>
                         <td>
@@ -59,12 +37,12 @@
                                 <table>
                                     <tr>
                                         <td>ID : </td>
-                                        <td><input id="new_id" type="text"></td>
-                                        <td><button onclick="isDuplicated();">중복확인</button></td>
+                                        <td><input name="id" id="new_id" type="text"></td>
+                                        <td><button id="check_id" type='button'>중복확인</button></td>
                                     </tr>
                                     <tr>
                                         <td>PW : </td>
-                                        <td><input id="new_pw" type="password"></td>
+                                        <td><input name='pw' id="new_pw" type="password"></td>
                                     </tr>
                                     <tr>
                                         <td>PW확인 : </td>
@@ -72,30 +50,29 @@
                                     </tr>
                                     <tr>
                                         <td>이메일 : </td>
-                                        <td><input id="new_email" type="email"></td>
+                                        <td><input name='email' id="new_email" type="email"></td>
                                     </tr>
                                     <tr>
                                         <td>핸드폰 : </td>
                                         <td>
                                             <div>
-                                                <input id = "phone1" type="text" size="3" maxlength="3" pattern="[0-9]{3}[0-9]?"> -
-                                                <input id = "phone2" type="text" size="4" maxlength="4" pattern="[0-9]{4}[0-9]?"> -
-                                                <input id = "phone3" type="text" size="4" maxlength="4" pattern="[0-9]{3}[0-9]?">
+                                                <input name='p1' id = "phone1" type="text" size="3" maxlength="3" pattern="[0-9]{3}[0-9]?"> -
+                                                <input name='p2' id = "phone2" type="text" size="4" maxlength="4" pattern="[0-9]{4}[0-9]?"> -
+                                                <input name='p3' id = "phone3" type="text" size="4" maxlength="4" pattern="[0-9]{3}[0-9]?">
                                             </div>
                                         </td>
                                     </tr>
                                 </table>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td><button onclick="registered();" class="btn">회원가입</button></td>
-                    <td><button onclick="location.href='index.html'" class="btn">취소</button></td>
-                </tr>
-            </table>
-
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn">회원가입</button></td>
+                        <td><button type="button" onclick="location.href='Login.html'" class="btn">취소</button></td>
+                    </tr>
+                </table>
+            </form>
         </div>
-
     </div>
 </body>
 </html>

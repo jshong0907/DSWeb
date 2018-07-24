@@ -6,24 +6,26 @@
 </head>
 <body>
     <div style="position: fixed; width: 1365px; height: 974px">
-        <div style="width: 100%; height: 200px; background: aqua;"></div>
+        <div style="width: 100%; height: 200px; background: aqua; position:relative;">
+            <div style="position:absolute; bottom:0px;">
+                <table border="2">
+                    <tr>
+                        <td><a href="Login.html">로그아웃</a></td>
+                        <td>굿</td>
+                        <td>나이스</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
         <div style="float:left; width: 300px; height: 774px; background: coral;"></div>
-        <div style="float:left; width: 1065px; height: 774px; background: mintcream; text-align: center;">
+        <div style="float:left; width: 1065px; height: 774px; background: mintcream; text-align: center; padding-top: 260px;">
             <div style="display: inline-block;">
-                <table style="width: 300px; height: 250px;" border="3">
-                    <tr>
-                        <td>이름</td>
-                        <td>나이</td>
-                        <td>등등</td>
-                    </tr>
-                    <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                    </tr>
+                <table id="table" name="db_table" border="3">
+
                 </table>
             </div>
         </div>
     </div>
 </body>
+<? include  "./apis/Database_Table.php"; ?>
 </html>
